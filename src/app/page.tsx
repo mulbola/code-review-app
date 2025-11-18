@@ -188,8 +188,7 @@ export default function Home() {
             AI 코드 리뷰 도우미
           </h1>
           <p className="text-base text-slate-600 break-words">
-            파일을 업로드하거나 코드를 붙여넣어 GPT-4o mini가
-            가장 중요한 리뷰 결과를 제공하도록 하세요. API 키는 이 브라우저 세션에만 저장됩니다.
+            파일을 업로드하거나 코드를 붙여넣어 GPT-4o mini를 이용해 코드를 리뷰할 수 있습니다. 
           </p>
         </header>
 
@@ -200,12 +199,9 @@ export default function Home() {
                 <div className="min-w-0 flex-1">
                   <h2 className="text-lg font-semibold break-words text-slate-900">OpenAI 접근</h2>
                   <p className="text-sm text-slate-600 break-words">
-                    키는 저장되지 않습니다. 리뷰가 끝나면 키를 회전하거나 취소하세요.
+                    API 키는 저장되지 않습니다.
                   </p>
                 </div>
-                <span className="rounded-full bg-slate-100 px-3 py-1 text-xs text-slate-700 border border-slate-200">
-                  클라이언트 전용
-                </span>
               </div>
               <input
                 type="password"
@@ -457,7 +453,7 @@ export default function Home() {
               </div>
               {history.length === 0 ? (
                 <p className="mt-4 text-sm text-slate-500">
-                  과거 리뷰가 빠른 참조를 위해 여기에 표시됩니다. 항목은 클라이언트 측에만 저장됩니다.
+                  과거 리뷰가 여기에 표시됩니다. 내용은 저장되지 않으며, 새로고침시 사라집니다. 
                 </p>
               ) : (
                 <ul className="mt-4 max-h-[500px] overflow-y-auto space-y-4">
