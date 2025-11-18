@@ -34,3 +34,24 @@ Visit [http://localhost:3000](http://localhost:3000) to use the reviewer UI.
 ## Deployment
 
 Deploy anywhere that runs Next.js (Vercel, Netlify, etc.). No server-side runtime is required unless you later decide to proxy OpenAI traffic.
+
+### Deploy to Vercel (Recommended)
+
+1. [Fork or clone the repo.](https://github.com/your-repo)
+2. Visit [vercel.com/import](https://vercel.com/import), connect your GitHub, and import the project.
+3. **Set environment variable in Vercel Project Settings** for OpenAI API Key if you plan to prefill in code, else users must enter it client-side only.
+4. Use Vercel's CI/CD for production & preview.
+
+#### Environment Example
+The app **does not require a server-side API key**. The review key is used client-side. You may specify:
+
+```
+OPENAI_API_KEY=sk-...   # (enter in Vercel dashboard only if prepopulating)
+```
+
+#### vercel.json
+For custom build & routing, see `vercel.json` in this repository.
+
+### Notes
+- We recommend not storing API keys in public repos. Users should input keys per session.
+- Set up custom domain & extra config via [vercel dashboard](https://vercel.com/dashboard)
