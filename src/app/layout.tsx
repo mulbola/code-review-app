@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "AI Code Review Companion",
     images: [
       {
-        url: "/vercel.svg", // public 하위의 대표 이미지 (필요시 별도 썸네일 추가 가능)
+        url: "/vercel.svg",
         width: 256,
         height: 256,
         alt: "서비스 대표 이미지",
@@ -35,7 +35,9 @@ export const metadata: Metadata = {
     description: "코드 파일 업로드 또는 직접 입력 후 GPT 기반 AI 코드리뷰",
     images: ["/vercel.svg"]
   },
-  metadataBase: new URL("https://your-vercel-project-url.vercel.app")
+  metadataBase: process.env.VERCEL_URL 
+    ? new URL(`https://${process.env.VERCEL_URL}`)
+    : new URL("http://localhost:3000")
 };
 
 export default function RootLayout({
